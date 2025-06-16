@@ -4,6 +4,7 @@ A powerful, easy-to-use web-based calculator built to compute simple interest ba
 
 ![Screenshot](![image](https://github.com/user-attachments/assets/376cc191-237b-4017-b14d-4f798ebf4fb3)
 )
+![image](https://github.com/user-attachments/assets/43c17b25-afc8-440e-acd0-83631745d68e)
 
 ---
 
