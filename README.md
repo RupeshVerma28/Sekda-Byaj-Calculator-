@@ -29,7 +29,7 @@ This calculator is built for:
 
 You can use the calculator directly from your browser — no installation required.
 
-🔗 **Live Website**: [Click here to use it now](https://your-github-username.github.io/sekda-byaj-calculator/)
+🔗 **Live Website**: [Click here to use it now](https://rupeshverma28.github.io/Sekda-Byaj-Calculator-/)
 
 1. Enter:
    - धनराशि (Principal Amount in ₹)
