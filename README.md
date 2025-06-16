@@ -2,8 +2,7 @@
 
 A powerful, easy-to-use web-based calculator built to compute simple interest based on "per hundred rupees" logic commonly used in rural finance and informal lending systems.
 
-![Screenshot](![image](https://github.com/user-attachments/assets/376cc191-237b-4017-b14d-4f798ebf4fb3)
-)
+## 🖼️Screenshot 
 ![image](https://github.com/user-attachments/assets/43c17b25-afc8-440e-acd0-83631745d68e)
 
 ---
@@ -70,9 +69,9 @@ You can use the calculator directly from your browser — no installation requir
 
 ## 📸 Screenshot
 
-![App Screenshot](![image](https://github.com/user-attachments/assets/4e29bd73-bba7-4b51-ac41-88c1a7751914)
-)
+![image](https://github.com/user-attachments/assets/ca55ac3c-4ec5-4492-8df0-d8235cd3a942)
 
+---
 > You can take a fresh screenshot of the calculator interface and rename it `screenshot.png` in your repo directory.
 
 ---
