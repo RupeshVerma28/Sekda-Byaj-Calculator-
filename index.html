@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>सेकड़ा ब्याज कैलकुलेटर</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body {
+      background: linear-gradient(to right, #1f1c2c, #928dab);
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 2rem;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding: 1rem 0;
+      background-color: rgba(0, 0, 0, 0.2);
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .footer a {
+      margin: 0 15px;
+      color: white;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+    .footer a:hover {
+      color: #a29bfe;
+    }
+    .btn-custom {
+      background-color: #6c5ce7;
+      color: white;
+    }
+    .btn-custom:hover {
+      background-color: #a29bfe;
+    }
+    #result > div {
+      background-color: #222;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-5">
+    <div class="glass" id="printArea">
+      <h2 class="text-center mb-4">सेकड़ा ब्याज कैलकुलेटर</h2>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label for="amount" class="form-label">धनराशि (₹)</label>
+          <input type="number" id="amount" class="form-control" placeholder="उदाहरण: 10000" />
+        </div>
+        <div class="col-md-6">
+          <label for="rate" class="form-label">रूपये प्रति सैकड़ा ₹</label>
+          <input type="number" id="rate" class="form-control" placeholder="उदाहरण: 2" />
+        </div>
+        <div class="col-md-6">
+          <label for="months" class="form-label">समय (माह में)</label>
+          <input type="number" id="months" class="form-control" placeholder="उदाहरण: 6" />
+        </div>
+        <div class="col-md-6">
+          <label for="days" class="form-label">(वैकल्पिक) समय (दिन में)</label>
+          <input type="number" id="days" class="form-control" placeholder="उदाहरण: 15" />
+        </div>
+        <div class="col-12">
+          <button class="btn btn-custom w-100" onclick="calculateInterest()">ब्याज कैलकुलेट करें</button>
+        </div>
+      </div>
+      <div class="mt-4" id="result"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div>
+      <a href="https://www.instagram.com/code_4_funn?igsh=ZGptODNicG9yc3Fl" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://youtube.com/@code4funx?si=dRtr9pzNazgtIP7R" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="https://linkedin.com/in/rupeshverma28" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <p class="mt-2">© सभी अधिकार सुरक्षित रूपेश वर्मा 2025</p>
+  </footer>
+
+  <script>
+    function calculateInterest() {
+      const amount = parseFloat(document.getElementById('amount').value);
+      const rate = parseFloat(document.getElementById('rate').value);
+      const months = parseFloat(document.getElementById('months').value);
+      const days = parseFloat(document.getElementById('days').value) || 0;
+
+      if (isNaN(amount) || isNaN(rate) || isNaN(months)) {
+        alert('कृपया सभी आवश्यक इनपुट भरें।');
+        return;
+      }
+
+      const monthlyInterest = (amount * rate / 100) * months;
+      const dailyInterest = (amount * rate / 100) * (days / 30);
+      const totalInterest = monthlyInterest + dailyInterest;
+      const totalAmount = amount + totalInterest;
+
+      document.getElementById('result').innerHTML = `
+        <div>
+          <p>प्रारंभिक धनराशि: ₹${amount.toFixed(2)}</p>
+          <p>ब्याज दर प्रति सैकड़ा: ₹${rate}</p>
+          <p>समय (माह): ${months} माह</p>
+          <p>समय (दिन): ${days} दिन</p>
+          <p>मासिक ब्याज: ₹${monthlyInterest.toFixed(2)}</p>
+          <p>दैनिक ब्याज: ₹${dailyInterest.toFixed(2)}</p>
+          <h5>कुल ब्याज: ₹${totalInterest.toFixed(2)}</h5>
+          <h5>कुल राशि: ₹${totalAmount.toFixed(2)}</h5>
+        </div>
+      `;
+    }
+  </script>
+</body>
+</html>
